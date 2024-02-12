@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 });
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://cameronbrett32:V8Fcn2pdrvkXlrBK@dev-myapp.p7zdjqk.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log('Connected to MongoDB');
         // Only start the server if MongoDB connects successfully
